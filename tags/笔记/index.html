@@ -96,7 +96,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="BLOG">
-<meta property="og:url" content="https:&#x2F;&#x2F;qiyujian.github.io&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;qiyujian.github.io&#x2F;tags&#x2F;%E7%AC%94%E8%AE%B0&#x2F;index.html">
 <meta property="og:site_name" content="BLOG">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://qiyujian.github.io/"/>
+  <link rel="canonical" href="https://qiyujian.github.io/tags/笔记/"/>
 
 
 
 
 
-  <title>BLOG</title>
+  <title>Tag: 笔记 | BLOG</title>
   
 
 
@@ -159,9 +159,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,138 +242,53 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
-    
+
+  
+  
+  
+  <div class="post-block tag">
+
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>笔记<small>Tag</small>
+        </h1>
+      </div>
+
       
-
-  
-
-  
-  
-  
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://qiyujian.github.io/2019/11/06/tcpdump/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yujian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/06/tcpdump/" itemprop="url">tcpdump</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+            <a class="post-title-link" href="/2019/11/06/tcpdump/" itemprop="url">
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span itemprop="name">tcpdump</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-06T10:00:02+08:00">
-                2019-11-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+            </a>
         
-          
-            <p>项目中, 遇到客户端应用与服务器不定期发生断线的情况. 从客户端API日志和服务端监控日志, 都定位不到问题. 但是大致锁定问题如下:</p>
-<ol>
-<li>客户端发送的req, 服务器都没有收到;</li>
-<li>服务器的push数据, 客户端可以正常收到.</li>
-</ol>
-<p>为了进一步定位问题, 在centos7中用tcpdump抓指定目标端口数据包, 配合API日志检查异常原因. tcpdump用到的命令如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i em1 port 41000 -w tcpcap_yyyymmdd.pcap</span><br></pre></td></tr></table></figure>
+      </h2>
 
-<p>为了方便, 在windwos下用wireshark打开 tcpcap_yyyymmdd.pcap文件, 定位到某个frame中, 数据是混乱的, 具体表现为将API中相邻的两次req数据, 拼接到了一个tcp frame中. 并且, 拼接处的截断也是混乱的.</p>
-<p>根据这个现象, 怀疑是客户端应用程序中, 在调用API接口是, 可能多线程产生了冲突.</p>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2019-11-06T10:00:02+08:00"
+              content="2019-11-06" >
+          11-06
+        </time>
+      </div>
 
-          
-        
+    </header>
+  </article>
+
+
       
     </div>
-    
-    
-    
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
   
   
   
-  </article>
-
-
-    
-  </section>
 
   
 
