@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="笔记 技术 网络," />
 
 
 
@@ -94,11 +94,15 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="BLOG">
-<meta property="og:url" content="https:&#x2F;&#x2F;qiyujian.github.io&#x2F;archives&#x2F;2019&#x2F;index.html">
+<meta name="description" content="项目中, 遇到客户端应用与服务器不定期发生断线的情况. 从客户端API日志和服务端监控日志, 都定位不到问题. 但是大致锁定问题如下:  客户端发送的req, 服务器都没有收到; 服务器的push数据, 客户端可以正常收到.  为了进一步定位问题, 在centos7中用tcpdump抓指定目标端口数据包, 配合API日志检查异常原因. tcpdump用到的命令如下: 1tcpdump -i em1">
+<meta name="keywords" content="笔记 技术 网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tcpdump">
+<meta property="og:url" content="https:&#x2F;&#x2F;qiyujian.github.io&#x2F;2019&#x2F;11&#x2F;06&#x2F;tcpdump&#x2F;index.html">
 <meta property="og:site_name" content="BLOG">
+<meta property="og:description" content="项目中, 遇到客户端应用与服务器不定期发生断线的情况. 从客户端API日志和服务端监控日志, 都定位不到问题. 但是大致锁定问题如下:  客户端发送的req, 服务器都没有收到; 服务器的push数据, 客户端可以正常收到.  为了进一步定位问题, 在centos7中用tcpdump抓指定目标端口数据包, 配合API日志检查异常原因. tcpdump用到的命令如下: 1tcpdump -i em1">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-06T02:08:03.864Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -128,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://qiyujian.github.io/archives/2019/"/>
+  <link rel="canonical" href="https://qiyujian.github.io/2019/11/06/tcpdump/"/>
 
 
 
 
 
-  <title>Archive | BLOG</title>
+  <title>tcpdump | BLOG</title>
   
 
 
@@ -159,7 +163,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -243,74 +247,140 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        Um..! 1 post. Keep on posting.
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h2 class="archive-year motion-element" id="archive-year-2019">2019</h2>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qiyujian.github.io/2019/11/06/tcpdump/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yujian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/11/06/tcpdump/" itemprop="url">
-              
-                <span itemprop="name">tcpdump</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">tcpdump</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-06T10:00:02+08:00"
-              content="2019-11-06" >
-          11-06
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-06T10:00:02+08:00">
+                2019-11-06
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>项目中, 遇到客户端应用与服务器不定期发生断线的情况. 从客户端API日志和服务端监控日志, 都定位不到问题. 但是大致锁定问题如下:</p>
+<ol>
+<li>客户端发送的req, 服务器都没有收到;</li>
+<li>服务器的push数据, 客户端可以正常收到.</li>
+</ol>
+<p>为了进一步定位问题, 在centos7中用tcpdump抓指定目标端口数据包, 配合API日志检查异常原因. tcpdump用到的命令如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i em1 port 41000 -w tcpcap_yyyymmdd.pcap</span><br></pre></td></tr></table></figure>
+
+<p>为了方便, 在windwos下用wireshark打开 tcpcap_yyyymmdd.pcap文件, 定位到某个frame中, 数据是混乱的, 具体表现为将API中相邻的两次req数据, 拼接到了一个tcp frame中. 并且, 拼接处的截断也是混乱的.</p>
+<p>根据这个现象, 怀疑是客户端应用程序中, 在调用API接口是, 可能多线程产生了冲突.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E7%AC%94%E8%AE%B0-%E6%8A%80%E6%9C%AF-%E7%BD%91%E7%BB%9C/" rel="tag"># 笔记 技术 网络</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
-    </div>
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -318,6 +388,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -505,11 +579,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
 
 
   
