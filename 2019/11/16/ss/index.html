@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="技术,网络," />
+  <meta name="keywords" content="Hexo,NexT" />
 
 
 
@@ -94,15 +94,12 @@
 
 
 
-<meta name="description" content="项目中, 遇到客户端应用与服务器不定期发生断线的情况. 从客户端API日志和服务端监控日志, 都定位不到问题. 但是大致锁定问题如下:  客户端发送的req, 服务器都没有收到; 服务器的push数据, 客户端可以正常收到.  为了进一步定位问题, 在centos7中用tcpdump抓指定目标端口数据包, 配合API日志检查异常原因. tcpdump用到的命令如下: 1tcpdump -i em1">
-<meta name="keywords" content="技术,网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="tcpdump">
-<meta property="og:url" content="https:&#x2F;&#x2F;qiyujian.github.io&#x2F;2019&#x2F;11&#x2F;06&#x2F;tcpdump&#x2F;index.html">
+<meta property="og:title" content="ss">
+<meta property="og:url" content="https:&#x2F;&#x2F;qiyujian.github.io&#x2F;2019&#x2F;11&#x2F;16&#x2F;ss&#x2F;index.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="项目中, 遇到客户端应用与服务器不定期发生断线的情况. 从客户端API日志和服务端监控日志, 都定位不到问题. 但是大致锁定问题如下:  客户端发送的req, 服务器都没有收到; 服务器的push数据, 客户端可以正常收到.  为了进一步定位问题, 在centos7中用tcpdump抓指定目标端口数据包, 配合API日志检查异常原因. tcpdump用到的命令如下: 1tcpdump -i em1">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-06T07:41:45.801Z">
+<meta property="og:updated_time" content="2019-11-16T14:33:40.833Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -132,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="https://qiyujian.github.io/2019/11/06/tcpdump/"/>
+  <link rel="canonical" href="https://qiyujian.github.io/2019/11/16/ss/"/>
 
 
 
 
 
-  <title>tcpdump | BLOG</title>
+  <title>ss | BLOG</title>
   
 
 
@@ -261,7 +258,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://qiyujian.github.io/2019/11/06/tcpdump/">
+    <link itemprop="mainEntityOfPage" href="https://qiyujian.github.io/2019/11/16/ss/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yujian">
@@ -278,7 +275,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">tcpdump</h1>
+          <h1 class="post-title" itemprop="name headline">ss</h1>
         
 
         <div class="post-meta">
@@ -290,8 +287,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-06T10:00:02+08:00">
-                2019-11-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-16T22:33:40+08:00">
+                2019-11-16
               </time>
             
 
@@ -328,17 +325,7 @@
       
 
       
-        <p>项目中, 遇到客户端应用与服务器不定期发生断线的情况. 从客户端API日志和服务端监控日志, 都定位不到问题. 但是大致锁定问题如下:</p>
-<ol>
-<li>客户端发送的req, 服务器都没有收到;</li>
-<li>服务器的push数据, 客户端可以正常收到.</li>
-</ol>
-<p>为了进一步定位问题, 在centos7中用tcpdump抓指定目标端口数据包, 配合API日志检查异常原因. tcpdump用到的命令如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i em1 port 41000 -w tcpcap_yyyymmdd.pcap</span><br></pre></td></tr></table></figure>
-
-<p>为了方便, 在windwos下用wireshark打开 tcpcap_yyyymmdd.pcap文件, 定位到某个frame中, 数据是混乱的, 具体表现为将API中相邻的两次req数据, 拼接到了一个tcp frame中. 并且, 拼接处的截断也是混乱的.</p>
-<p>根据这个现象, 怀疑是客户端应用程序中, 在调用API接口是, 可能多线程产生了冲突.</p>
-
+        
       
     </div>
     
@@ -353,14 +340,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag"># 技术</a>
-          
-            <a href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag"># 网络</a>
-          
-        </div>
-      
 
       
       
@@ -370,15 +349,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/11/16/%E6%9D%82%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" rel="next" title="杂记（一）">
+                <i class="fa fa-chevron-left"></i> 杂记（一）
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/08/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="prev" title="读书笔记">
-                读书笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
