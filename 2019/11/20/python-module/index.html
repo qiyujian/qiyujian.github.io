@@ -94,15 +94,15 @@
 
 
 
-<meta name="description" content="a module is a file containing Python definitions and statements. The file name is the module name with the suffix .py appended. Within a module, the module’s name (as a string) is available as the va">
+<meta name="description" content="modulea module is a file containing Python definitions and statements. The file name is the module name with the suffix .py appended. Within a module, the module’s name (as a string) is available as t">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python-module">
 <meta property="og:url" content="https:&#x2F;&#x2F;qiyujian.github.io&#x2F;2019&#x2F;11&#x2F;20&#x2F;python-module&#x2F;index.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="a module is a file containing Python definitions and statements. The file name is the module name with the suffix .py appended. Within a module, the module’s name (as a string) is available as the va">
+<meta property="og:description" content="modulea module is a file containing Python definitions and statements. The file name is the module name with the suffix .py appended. Within a module, the module’s name (as a string) is available as t">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-20T09:23:19.874Z">
+<meta property="og:updated_time" content="2019-11-20T09:25:00.784Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -328,19 +328,13 @@
       
 
       
-        <ul>
-<li><p>a module is a file containing Python definitions and statements. The file name is the module name with the suffix .py appended. Within a module, the module’s name (as a string) is available as the value of the global variable <strong>name</strong>.</p>
-</li>
-<li><p>when you run a Python module with</p>
+        <h1 id="module"><a href="#module" class="headerlink" title="module"></a>module</h1><p>a module is a file containing Python definitions and statements. The file name is the module name with the suffix .py appended. Within a module, the module’s name (as a string) is available as the value of the global variable <strong>name</strong>.</p>
+<p> when you run a Python module with</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python fibo.py &lt;arguments&gt;</span><br></pre></td></tr></table></figure>
 <p>the code in the module will be executed, just as if you imported it, but with the <strong>name</strong> set to “<strong>main</strong>“. That means that by adding this code at the end of your module:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    import sys</span><br><span class="line">    fib(int(sys.argv[1]))</span><br></pre></td></tr></table></figure>
 <p>you can make the file usable as a script as well as an imiportable module, because the code that parses the command line only runs if the module is executed as the “main” file.</p>
-</li>
-<li><p>python scripts vs. module</p>
-</li>
-</ul>
-<p>an answer to python exception message like ‘attempted relative module non-package’. <a href="https://stackoverflow.com/questions/14132789/relative-imports-for-the-billionth-time#answer-14132912" target="_blank" rel="noopener">HERE</a></p>
+<h1 id="python-scripts-vs-module"><a href="#python-scripts-vs-module" class="headerlink" title="python scripts vs. module"></a>python scripts vs. module</h1><p>an answer to python exception message like ‘attempted relative module non-package’. <a href="https://stackoverflow.com/questions/14132789/relative-imports-for-the-billionth-time#answer-14132912" target="_blank" rel="noopener">HERE</a></p>
 
       
     </div>
@@ -431,8 +425,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -485,6 +488,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#module"><span class="nav-number">1.</span> <span class="nav-text">module</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python-scripts-vs-module"><span class="nav-number">2.</span> <span class="nav-text">python scripts vs. module</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
