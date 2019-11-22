@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="BLOG">
 <meta property="og:description" content="声明: 本文非原创, 基本转载自这篇文章, 略有修改.  swig (simplified wrapper and interface generator) 可以把c&#x2F;cpp代码包装成python&#x2F;ruby等接口. 本文主要记录如何用swig包装c&#x2F;cpp为python模块的相关资料. c&#x2F;cpp 包装为 python 的几种方法:Python C Apipython解释器提供的一组 c api">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-22T09:31:17.319Z">
+<meta property="og:updated_time" content="2019-11-22T09:37:02.660Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -389,7 +389,7 @@
 
 <p>以上是用distutils构建了 example module, 也可以通过编译器直接构建, 如下:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -fPIC -I/usr/include/python2.5/ -lstdc\+\+ -shared -o _example.os example_wrap.cxx example.cpp</span><br></pre></td></tr></table></figure>
-<p>注意, -fPIC 和 -lstdc++ 都是必需的, <em>example.os 前面的下划线(‘</em>‘)也是必需的.</p>
+<p>注意, -fPIC 和 -lstdc++ 都是必需的, _example.os 前面的下划线(‘_‘)也是必需的.</p>
 
       
     </div>
