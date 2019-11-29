@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="杂记," />
+  <meta name="keywords" content="virtualbox,centos7," />
 
 
 
@@ -94,15 +94,15 @@
 
 
 
-<meta name="description" content="都说随着年纪增长，生活甚至思维都是重复的。以前是不信的。 昨天回了趟学校，碰见了几位曾经一个“战壕”的朋友，也是一两年没见，平常也很少联系，互相更新了近况。不禁感慨，大学时候总觉得未来充满了各种可能性，每个人都可以有很多选择。现在回过头看，其实很多东西早就在你的身体里生根了，年纪越大，这种内在的东西发挥的作用越强，不再是外力或者哪怕自己想要去改变而做出的努力，都很难起到多大的作用。反而是例如性格，">
-<meta name="keywords" content="杂记">
+<meta name="description" content="install centos7 in virtualbox从清华开源软件源下载所需版本centos, 在virtualbox中安装. set netconfigvirutalbox在设置-&amp;gt;网络-&amp;gt;网卡1, 连接方式选择 “桥接网卡”, “高级”下拉菜单中记录下mac地址. 选择桥接网卡模式, 这样虚拟机的网址跟宿主机在同一局域网下. centos7 sudo编辑网卡配置文件: 1su">
+<meta name="keywords" content="virtualbox,centos7">
 <meta property="og:type" content="article">
-<meta property="og:title" content="杂记（一）">
-<meta property="og:url" content="https:&#x2F;&#x2F;qiyujian.github.io&#x2F;2019&#x2F;11&#x2F;16&#x2F;%E6%9D%82%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89&#x2F;index.html">
+<meta property="og:title" content="virtualbox+centos7">
+<meta property="og:url" content="https:&#x2F;&#x2F;qiyujian.github.io&#x2F;2019&#x2F;11&#x2F;29&#x2F;virtualbox-centos7&#x2F;index.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="都说随着年纪增长，生活甚至思维都是重复的。以前是不信的。 昨天回了趟学校，碰见了几位曾经一个“战壕”的朋友，也是一两年没见，平常也很少联系，互相更新了近况。不禁感慨，大学时候总觉得未来充满了各种可能性，每个人都可以有很多选择。现在回过头看，其实很多东西早就在你的身体里生根了，年纪越大，这种内在的东西发挥的作用越强，不再是外力或者哪怕自己想要去改变而做出的努力，都很难起到多大的作用。反而是例如性格，">
+<meta property="og:description" content="install centos7 in virtualbox从清华开源软件源下载所需版本centos, 在virtualbox中安装. set netconfigvirutalbox在设置-&amp;gt;网络-&amp;gt;网卡1, 连接方式选择 “桥接网卡”, “高级”下拉菜单中记录下mac地址. 选择桥接网卡模式, 这样虚拟机的网址跟宿主机在同一局域网下. centos7 sudo编辑网卡配置文件: 1su">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-16T14:52:54.024Z">
+<meta property="og:updated_time" content="2019-11-29T06:33:43.084Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://qiyujian.github.io/2019/11/16/杂记（一）/"/>
+  <link rel="canonical" href="https://qiyujian.github.io/2019/11/29/virtualbox-centos7/"/>
 
 
 
 
 
-  <title>杂记（一） | BLOG</title>
+  <title>virtualbox+centos7 | BLOG</title>
   
 
 
@@ -261,7 +261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://qiyujian.github.io/2019/11/16/%E6%9D%82%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="https://qiyujian.github.io/2019/11/29/virtualbox-centos7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yujian">
@@ -278,7 +278,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">杂记（一）</h1>
+          <h1 class="post-title" itemprop="name headline">virtualbox+centos7</h1>
         
 
         <div class="post-meta">
@@ -290,8 +290,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-16T08:15:23+08:00">
-                2019-11-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-29T13:48:04+08:00">
+                2019-11-29
               </time>
             
 
@@ -328,11 +328,25 @@
       
 
       
-        <p>都说随着年纪增长，生活甚至思维都是重复的。以前是不信的。</p>
-<p>昨天回了趟学校，碰见了几位曾经一个“战壕”的朋友，也是一两年没见，平常也很少联系，互相更新了近况。不禁感慨，大学时候总觉得未来充满了各种可能性，每个人都可以有很多选择。现在回过头看，其实很多东西早就在你的身体里生根了，年纪越大，这种内在的东西发挥的作用越强，不再是外力或者哪怕自己想要去改变而做出的努力，都很难起到多大的作用。反而是例如性格，小时候家庭环境的影响，思维习惯这些东西，才是最长久的作用力。</p>
-<p>这也可能从另一个角度说明了为什么年纪越大，越容易重复，很难创新和突破。</p>
-<p>最近在看一个讲中国地缘政治的系列公号文章。印证了自己前几年的一个想法，仅从中国历史来看，虽然科技进步日新月异，但是人文、社会、政治文化这些方面其实并没有什么大的进展。先秦春秋战国时候的政治博弈，大国小邦间的利益交换，跟当前没有什么不同；政治制度，扒开现代的一些词汇，其底层的架构和这种架构所要解决的问题，也并没有比历史上的盛世高明多少。在整个地球的生命长河中，人类社会发展到现在还是很短暂的，所以，由于地理环境决定的诸如社会习惯、文化、地缘博弈、政治经济文化制度，并没有发生太大的变化。只是说，冷兵器时代视为屏障的一些关隘，在现代科技下无所依仗而已，但是由地理环境决定的整个大气气候，却是现在的科技所无法解决的。</p>
-<p>最近第六季《奇葩说》上李诞的一番辩论又让他火了起来。占大多数的文章认为李诞是“装睡的醒着的人”，是“看似不努力但很努力的人”，是“装作什么都不懂实际看的很透的人”。说实话，前述这三种说法我也有同感，但也仅停留在认为他是这样的人的这个阶段，对这种特点的人是喜欢不起来的。总认为什么东西到他嘴里就都被消解了，都无所谓，就像他的那本书《人间不值得》。反而是我一再表达过的金庸的《神雕侠侣》中郭靖的话”侠之大者为国为民”才最为触动，才算说清楚了人生的终极意义。入世出世的态度也都包含在这一句“为国为民”中了。</p>
+        <h1 id="install-centos7-in-virtualbox"><a href="#install-centos7-in-virtualbox" class="headerlink" title="install centos7 in virtualbox"></a>install centos7 in virtualbox</h1><p>从<a href="https://mirrors.tuna.tsinghua.edu.cn/centos/" target="_blank" rel="noopener">清华开源软件源</a>下载所需版本centos, 在virtualbox中安装.</p>
+<h1 id="set-netconfig"><a href="#set-netconfig" class="headerlink" title="set netconfig"></a>set netconfig</h1><h2 id="virutalbox"><a href="#virutalbox" class="headerlink" title="virutalbox"></a>virutalbox</h2><p>在设置-&gt;网络-&gt;网卡1, 连接方式选择 “桥接网卡”, “高级”下拉菜单中记录下mac地址.</p>
+<p>选择桥接网卡模式, 这样虚拟机的网址跟宿主机在同一局域网下.</p>
+<h2 id="centos7"><a href="#centos7" class="headerlink" title="centos7"></a>centos7</h2><ol>
+<li><p>sudo编辑网卡配置文件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/sysconfig/network-scripts/ifcfg-enp0s3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将下面内容修改或追加进配置文件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ONBOOT=yes</span><br><span class="line">HWADDR=08:00:27:04:95:D0  # 此处为在virtualbox中记录下的mac地址</span><br><span class="line">BOOTPROTO=dhcp</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启centos7:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">halt --r</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检查是否可ping:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ping baidu.com</span><br><span class="line">ping 192.168.0.115 # 任意局域网ip</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
 
       
     </div>
@@ -350,7 +364,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E6%9D%82%E8%AE%B0/" rel="tag"># 杂记</a>
+            <a href="/tags/virtualbox/" rel="tag"># virtualbox</a>
+          
+            <a href="/tags/centos7/" rel="tag"># centos7</a>
           
         </div>
       
@@ -363,8 +379,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/08/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="next" title="读书笔记">
-                <i class="fa fa-chevron-left"></i> 读书笔记
+              <a href="/2019/11/22/%E7%94%A8swig%E5%AF%B9c-cpp%E4%BB%A3%E7%A0%81%E8%BF%9B%E8%A1%8Cpython%E5%8C%85%E8%A3%85/" rel="next" title="用swig对c/cpp代码进行python包装">
+                <i class="fa fa-chevron-left"></i> 用swig对c/cpp代码进行python包装
               </a>
             
           </div>
@@ -372,10 +388,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/20/python-module/" rel="prev" title="python-module">
-                python-module <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -427,8 +439,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -481,6 +502,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#install-centos7-in-virtualbox"><span class="nav-number">1.</span> <span class="nav-text">install centos7 in virtualbox</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#set-netconfig"><span class="nav-number">2.</span> <span class="nav-text">set netconfig</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#virutalbox"><span class="nav-number">2.1.</span> <span class="nav-text">virutalbox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#centos7"><span class="nav-number">2.2.</span> <span class="nav-text">centos7</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
